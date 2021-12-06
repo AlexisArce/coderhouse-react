@@ -1,11 +1,11 @@
-import ItemCount from "./ItemCount";
+import ItemCounter from "./ItemCounter";
 
 const ItemListContainer = () => {
   return (
     <div className="container fluid">
       <div className="row">
         <div className="col">
-          <ItemCount min={1} max={5} />
+          <ItemCounter min={1} max={5} stock={100} />
         </div>
       </div>
     </div>

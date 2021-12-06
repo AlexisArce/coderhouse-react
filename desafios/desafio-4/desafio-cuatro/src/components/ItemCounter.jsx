@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 
 const ItemCount = (props) => {
-  const { min, max } = props;
-  const [value, setValue] = useState(min);
+  const { min, max, stock } = props;
+  const [value, setValue] = useState(stock ? min : stock);
 
   const handleIncrease = () => {
-    if (value < max) setValue(() => value + 1);
+    if (!stock) return false;
+
+    if (value < max) setValue((prevValue) => prevValue + 1);
   };
 
   const handleDecrease = () => {
-    if (value > min) setValue(() => value - 1);
+    if (value > min) setValue((prevValue) => prevValue - 1);
   };
 
   const handelInputChange = (e) => {
-    const inputValue = parseInt(e.currentTarget.value);
+    const inputValue = parseInt(e.currentTarget.value) || min;
 
     if (inputValue >= min && inputValue <= max) setValue(inputValue);
 
