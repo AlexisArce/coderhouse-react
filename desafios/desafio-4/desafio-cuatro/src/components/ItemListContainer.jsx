@@ -5,7 +5,7 @@ const ItemListContainer = () => {
     <div className="container fluid">
       <div className="row">
         <div className="col">
-          <ItemCount stock="5" />
+          <ItemCount min={1} max={5} />
         </div>
       </div>
     </div>
