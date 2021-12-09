@@ -13,7 +13,7 @@ const ItemListContainer = () => {
   }, []);
 
   return (
-    <div className="container fluid my-5">
+    <div className="container fluid my-4">
       {items && items.length ? <ItemList items={items} /> : <Spinner />}
     </div>
   );
