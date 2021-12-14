@@ -9,19 +9,27 @@ const ItemDetail = ({ item }) => {
           <img
             src={item.image}
             height="400"
-            width="600"
-            aspect-ratio="05"
-            className="grey lighten-2 mx-2 px-5"
+            width="400"
+            className="grey lighten-2 p-2 "
             alt={item.title}
           />
         </div>
-        <div className="col-md-4">
+        <div className="col-md-4 text-center">
           <h4>{item.title}</h4>
-          <p className="text-right">$ {item.price}</p>
-          <ItemCounter min={1} max={5} stock={100} />
-          <button color="primary" block>
-            Agregar al carrito
-          </button>
+          <p
+            className="badge rounded-pill bg-secondary m-4"
+            style={{ fontSize: 20 }}
+          >
+            $ {item.price}
+          </p>
+          <div className="text-center">
+            <ItemCounter min={1} max={5} stock={100} />
+          </div>
+          <div className="d-grid gap-2">
+            <button class="btn btn-primary" type="button">
+              Agregar al carrito
+            </button>
+          </div>
         </div>
       </div>
       <div className="row">
