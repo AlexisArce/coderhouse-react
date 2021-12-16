@@ -12,10 +12,11 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Routes>
+        <Route exact path="/" element={<ItemListContainer />}></Route>
         <Route
           exact
-          path="/"
-          element={<ItemListContainer items={[]} />}
+          path="/category/:category"
+          element={<ItemListContainer />}
         ></Route>
         <Route exact path="/item/:id" element={<ItemDetailContainer />}></Route>
       </Routes>
