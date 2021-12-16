@@ -9,11 +9,12 @@ const ItemListContainer = () => {
   const { category } = useParams();
 
   useEffect(() => {
-    axios
-      .get(`https://fakestoreapi.com/products/category/${category}`)
-      .then((response) => {
-        setItems(response.data);
-      });
+    let url = "https://fakestoreapi.com/products";
+    url = category ? `${url}/category/${category}` : url;
+
+    axios.get(url).then((response) => {
+      setItems(response.data);
+    });
   }, [category]);
 
   return (
